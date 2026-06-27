@@ -1,0 +1,439 @@
+<!DOCTYPE html PUBLIC "-//IETF//DTD HTML//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>Xiaodong Wang's Home Page</title>
+<style>
+    /* Deepened fabric texture background: more pronounced patterns, darker color*/
+    body.fabric-bg {
+        background-color: #d9cdbc;
+        background-image:
+            /* Main texture: denser diagonal lines, darker color */
+            repeating-linear-gradient(45deg, rgba(160, 135, 115, 0.25) 0px, rgba(160, 135, 115, 0.25) 1px,
+                                      rgba(140, 115, 95, 0.15) 1px, rgba(140, 115, 95, 0.15) 3px),
+            repeating-linear-gradient(-45deg, rgba(150, 125, 105, 0.2) 0px, rgba(150, 125, 105, 0.2) 1px,
+                                      rgba(130, 105, 85, 0.12) 1px, rgba(130, 105, 85, 0.12) 3px),
+            /* Underlying cross texture, enhances the fabric feel */
+            repeating-linear-gradient(0deg, rgba(170, 145, 125, 0.10) 0px, rgba(170, 145, 125, 0.10) 2px,
+                                      rgba(150, 125, 105, 0.06) 2px, rgba(150, 125, 105, 0.06) 4px),
+            repeating-linear-gradient(90deg, rgba(170, 145, 125, 0.10) 0px, rgba(170, 145, 125, 0.10) 2px,
+                                      rgba(150, 125, 105, 0.06) 2px, rgba(150, 125, 105, 0.06) 4px),
+            /* The base color, warmer and deeper */
+            linear-gradient(135deg, #d4c5b2 0%, #cbbaa5 100%);
+        background-blend-mode: normal, normal, normal, normal, normal;
+        margin: 0;
+        padding: 0;
+    }
+    /* Keep the original link hover effect */
+    A:hover {color: darkred; text-decoration: underline}
+    .book-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin: 20px 0 10px 0;
+      padding: 10px 0;
+    }
+    .book-item {
+      text-align: center;
+      max-width: 160px;
+    }
+    .book-item img {
+      width: 130px;
+      height: auto;
+      border: none;
+      box-shadow: none;
+      background-color: transparent;
+      padding: 0;
+      display: block;
+    }
+    .book-item .caption {
+      font-size: 0.8rem;
+      margin-top: 6px;
+      color: darkblue;
+      font-weight: bold;
+    }
+    /* Make the background of the internal table semi-transparent so the fabric texture shows through */
+    table.main-layout {
+        background-color: transparent;
+    }
+    /* The main content area (including Research interests) uses a semi-transparent background, showing a fabric texture. */
+    td.inner-bg {
+        background-color: rgba(255, 248, 235, 0.88);
+        background-image:
+            repeating-linear-gradient(45deg, rgba(160, 135, 115, 0.15) 0px, rgba(160, 135, 115, 0.15) 1px,
+                                      rgba(140, 115, 95, 0.08) 1px, rgba(140, 115, 95, 0.08) 3px),
+            repeating-linear-gradient(-45deg, rgba(150, 125, 105, 0.12) 0px, rgba(150, 125, 105, 0.12) 1px,
+                                      rgba(130, 105, 85, 0.06) 1px, rgba(130, 105, 85, 0.06) 3px);
+        background-blend-mode: normal, normal;
+    }
+    table.bg-floral {
+        background-color: rgba(255, 248, 235, 0.88);
+        background-image:
+            repeating-linear-gradient(45deg, rgba(160, 135, 115, 0.15) 0px, rgba(160, 135, 115, 0.15) 1px,
+                                      rgba(140, 115, 95, 0.08) 1px, rgba(140, 115, 95, 0.08) 3px),
+            repeating-linear-gradient(-45deg, rgba(150, 125, 105, 0.12) 0px, rgba(150, 125, 105, 0.12) 1px,
+                                      rgba(130, 105, 85, 0.06) 1px, rgba(130, 105, 85, 0.06) 3px);
+        background-blend-mode: normal, normal;
+    }
+    td.bg-floral {
+        background-color: rgba(255, 248, 235, 0.88);
+        background-image:
+            repeating-linear-gradient(45deg, rgba(160, 135, 115, 0.15) 0px, rgba(160, 135, 115, 0.15) 1px,
+                                      rgba(140, 115, 95, 0.08) 1px, rgba(140, 115, 95, 0.08) 3px),
+            repeating-linear-gradient(-45deg, rgba(150, 125, 105, 0.12) 0px, rgba(150, 125, 105, 0.12) 1px,
+                                      rgba(130, 105, 85, 0.06) 1px, rgba(130, 105, 85, 0.06) 3px);
+        background-blend-mode: normal, normal;
+    }
+    td.bg-lightslategray {
+        background-color: lightslategray;
+    }
+    /* Apply a fabric texture to all main content tds */
+    .content-table td {
+        background-color: rgba(255, 248, 235, 0.88);
+        background-image:
+            repeating-linear-gradient(45deg, rgba(160, 135, 115, 0.15) 0px, rgba(160, 135, 115, 0.15) 1px,
+                                      rgba(140, 115, 95, 0.08) 1px, rgba(140, 115, 95, 0.08) 3px),
+            repeating-linear-gradient(-45deg, rgba(150, 125, 105, 0.12) 0px, rgba(150, 125, 105, 0.12) 1px,
+                                      rgba(130, 105, 85, 0.06) 1px, rgba(130, 105, 85, 0.06) 3px);
+        background-blend-mode: normal, normal;
+    }
+    /* Darken the outer table background so it blends with the fabric texture */
+    table.outer-table {
+        background-color: rgba(235, 220, 205, 0.88);
+    }
+    /* Specifically targeting the inner td where Research interests are, making sure the fabric texture takes effect */
+    td.research-bg {
+        background-color: rgba(255, 248, 235, 0.88);
+        background-image:
+            repeating-linear-gradient(45deg, rgba(160, 135, 115, 0.18) 0px, rgba(160, 135, 115, 0.18) 1px,
+                                      rgba(140, 115, 95, 0.10) 1px, rgba(140, 115, 95, 0.10) 3px),
+            repeating-linear-gradient(-45deg, rgba(150, 125, 105, 0.14) 0px, rgba(150, 125, 105, 0.14) 1px,
+                                      rgba(130, 105, 85, 0.08) 1px, rgba(130, 105, 85, 0.08) 3px);
+        background-blend-mode: normal, normal;
+    }
+</style>
+</head>
+
+<body class="fabric-bg" text="lavender" link="darkblue" vlink="mediumblue" bgcolor="floralwhite" alink="darkred">
+
+<ul>
+<table width="95%" cellpadding="0" cellspacing="2" bgcolor="floralwhite" class="main-layout outer-table" style="background-color:rgba(235,220,205,0.88);">
+<tbody><tr>
+  <td bgcolor="lightslategray" class="bg-lightslategray">
+
+<center>
+<table width="86%" height="352" bgcolor="lightslategray" style="background-color:lightslategray;">
+<tbody><tr><td width="308" height="348" bgcolor="lightslategray" style="background-color:lightslategray;">
+<img src="img/wang-03.jpg" width="399" height="351" cellpadding="3" border="0" background="black"></td>
+<td width="551" background="./img/dgrey47.jpg" style="background-image:url('./img/dgrey47.jpg');"><br>
+<font size="+3">
+<ul><ul>
+  <p><i><b>Xiaodong Wang &#65288;&#29579;&#26195;&#19996;&#65289;</b>
+      <font size="+1">
+      <br>
+      </font></i></p>
+  <p><i><font size="+1">Vice President of Fujian University of Technology<br>
+  </font></i></p>
+  <p><i><font size="+1">Professor, School of Mathematics and Computer Science<br>
+    </font></i></p>
+  <p><i><font size="+1">Fujian University of Technology</font></i></p>
+  <p><font size="+1"><font size="+1"><br>
+</font></font></p>
+</ul></ul></font></td>
+</tr></tbody></table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="6" bgcolor="floralwhite" class="bg-floral" style="background-color:rgba(255,248,235,0.88);">
+<tbody><tr><td>
+</td></tr>
+</tbody></table>
+
+<table width="100%" border="0" cellspacing="0" cellpadding="5">
+<tbody>
+<tr>
+<td width="15" valign="top">
+<p>&nbsp;</p>
+</td>
+
+<td>
+<table width="98%" border="1" bgcolor="darkslateblue" cellspacing="1" cellpadding="30" style="background-color:darkslateblue;">
+<tbody>
+<tr>
+<td bgcolor="floralwhite" class="inner-bg research-bg" style="background-color:rgba(255,248,235,0.88);">
+<font size="+1">
+<font color="darkblue">
+
+<font color="blue">
+<font color="blue">
+<b>Research interests:</b>
+</font>
+</font>
+<ul>
+<font size="+0">
+<font color="darkblue">
+<br>
+<li> Computer algorithm design and algorithm evaluation
+</li><li> Large-scale problem-solving algorithms and data structures
+     based on computer networks and information security
+</li><li> Information visualization technology
+</li><li> Geometric computing
+</li><li> Parallel and distributed algorithm design
+</li><li> Computational complexity theory
+</li></font></font></ul>
+
+<font size="+0">
+<font color="darkblue"> </font>
+<font color="darkblue"> </font>
+<font color="darkblue"> </font>
+<font color="darkblue"> </font>
+<font color="darkblue">
+<br>
+
+<font color="blue">
+<font size="+1">
+<b> Major roles and activities: </b>
+</font></font>
+<font color="darkblue" size="+0">
+<ul><br>
+
+<li> Mainly engaged in research in the field of computer algorithm design and analysis.
+</li><li> Led and completed projects such as the National Natural Science Foundation.
+</li><li> Won one Second Prize of National Science and Technology.
+</li><li> In 1990, went to Max Planck Institutes as a visiting scholar.
+</li><li> In 1997, was exceptionally promoted to professor at Fuzhou University.
+</li><li> Has served as dean of the School of Mathematics and Computer Science at Fuzhou University.
+</li><li> Vice president of Quanzhou Normal University.
+</li><li> Vice president of Fujian University of Technology.
+	
+<font size="+0">
+<font color="darkblue">
+<font color="blue">
+<font size="+1">
+<font color="darkblue" size="+0">  <br>
+</font></font></font></font></font>
+</li></ul>
+</font></font></font></font></font>
+	
+<!-- ====== 5 books ====== -->
+<div style="margin: 30px 0 10px 0;">
+<font color="blue" size="+1">
+<b>Selected Books &amp; Monographs:</b>
+</font>
+<div class="book-row">
+<div class="book-item">
+<img src="img/phei-06.webp" alt="Book 1" width="130" height="auto">
+</div>
+<div class="book-item">
+<img src="img/phei-05.jpg" alt="Book 2" width="130" height="auto">
+</div>
+<div class="book-item">
+<img src="img/qh-04.jpg" alt="Book 3" width="130" height="auto">
+</div>
+<div class="book-item">
+<img src="img/qh-04-01.jpg" alt="Book 4" width="130" height="auto">
+</div>
+<div class="book-item">
+<img src="img/phei-03.jpg" alt="Book 5" width="130" height="auto">
+</div>
+</div>
+</div>
+<!-- ====== books end ====== -->
+
+<font color="darkblue">
+<font size="+1">
+<font color="blue">
+<font size="+1">
+
+<b>Selected Publications:</b>
+<ul>
+<font size="+0">
+<font color="blue">	
+<br>
+<li><a href="https://" ,=""><b>On the Complexity of the Extreme Points Decision Problem.</b></a> <i> Information Processing Letters</i>, 40(10), 1991.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b> The Epsilon-Net Algorithm for the Closest Pair Problem.</b></a>
+with Q. Fu.
+<i> Chinese Journal of Numerical Mathematics and Applications.</i>, 18(2), 1996.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Frame for Solving General Divide-and-Conquer Recurrences.</b></a>
+with Q. Fu.
+<i>Information Processing Letters</i>, 59(1), 1996.
+<br><br>
+</li>
+<li>
+<a href="#">
+<b>An Improved HeapSort Algorithm with Comparisons in the Worst Case.</b></a>
+with Y. Wu.
+<i>Journal of Computer Science and Technology</i>, 22(6), 2007.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>On the Worst Case Data Sets for Order Statistics. </b></a>
+<i>Applied Mathematics & Information Sciences</i>, 6(2), 357-362, 2012.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Simple Algorithm for Solving the Generalized LCS Problem with Substring Exclusion Constraint.</b></a>
+with D. Zhu.
+<i>Algorithms</i>, 6(3), 2013.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Dynamic Programming Solution to a Generalized LCS Problem.</b></a>
+with L. Wang, Y. Wu and D. Zhu.
+<i>Information Processing Letters</i>, 113(1), 2013.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Comparative Study on the Algorithms for a Generalized Josephus Problem.</b></a>
+with L. Wang.
+<i>Applied Mathematics & Information Sciences</i>, 7(4), 2013.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>An Efficient Dynamic Programming Algorithm for the Generalized LCS Problem with Multiple Substring Exclusive Constraints.</b></a>
+with L. Wang, Y. Wu and D. Zhu.
+<i>Journal of Discrete Algorithms</i>, 26, 2014.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>An Optimal Algorithm for the Weighted Median Problem.</b></a>
+with D. Zhu.
+<i>Journal of Computers</i>, 9(2), 2014.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>Complete Solutions for a Combinatorial Puzzle in Linear Time and Its Computer Implementation.</b></a>
+with L. Wang, Y. Wu and D. Zhu.
+<i>Applied Mathematics & Information Sciences</i>, 8(4), 2014.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>Efficient Algorithms for a Generalized Shuffling Problem.</b></a>
+with L. Wang and D. Zhu.
+<i>International Journal of Computer Science</i>, 41(4), 2014.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>On the Maximal Number of Monochrome Nodes in Dichromatic Balanced Trees.</b></a>
+with D. Zhu.
+<i>Applied Mathematics & Information Sciences</i>, 4(3), 2015.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Simple Polynomial Time Algorithm for the Generalized LCS Problem with Multiple Substring Exclusive Constraints.</b></a>
+with D. Zhu.
+<i>International Journal of Computer Science</i>, 42(3), 2015.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>An Efficient Dynamic Programming Algorithm for a New Generalized LCS Problem.</b></a>
+with D. Zhu.
+<i>International Journal of Computer Science</i>, 43(2), 2016.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>An Improved O(R log log n + n) Time Algorithm for Computing the Longest Common Subsequence</b></a>
+with D. Zhu.
+<i>International Journal of Computer Science</i>, 44(2), 2017.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Note on the Largest Number of Red Nodes in Red-Black Trees.</b></a>
+with L. Wang, Y. Wu and D. Zhu.
+<i>Journal of Discrete Algorithms</i>, 43(1), 2017.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Space Efficient Algorithm for the Longest Common Subsequence in k-Length Substrings.</b></a>
+with L. Wang, T. Wang and D. Zhu.
+<i>Theoretical Computer Science</i>, 687(1), 2017.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Simple Linear Space Algorithm for Computing a Longest Common Increasing Subsequence.</b></a>
+with D. Cai, L. Wang and D. Zhu.
+<i>International Journal of Computer Science</i>, 45(3), 2018.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Simple Linear Space Algorithm for Computing Nonoverlapping Inversion and Transposition Distance in Quadratic Average Time.</b></a>
+with L. Wang.
+<i>Journal of Computational Biology</i>, 25(6), 2018.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>A Simple and Space Efficient Segment Tree Implementation.</b></a>
+with L. Wang.
+<i>MethodsX</i>, 6(3), 2019.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>Computing Nonoverlapping Inversion Distance Between Two Strings in Linear Average Time.</b></a>
+with L. Wang.
+<i>Journal of Computational Biology</i>, 26(3), 2019.
+<br><br>
+</li>
+<li>
+<a href="https://" ,="">
+<b>Efficient Computation of Longest Common Subsequences with Multiple Substring Inclusive Constraints.</b></a>
+with L. Wang.
+<i>Journal of Computational Biology</i>, 26(9), 2019.
+<br><br>
+</li>
+<font size="+1" color="blue">
+<a name="contact">
+<b>Contact information:</b>
+</a>
+</font>
+<font size="+0" color="blue">
+<blockquote>
+
+<address> School of Mathematics and Computer Science</address>
+<address> Fujian University of Technology </address>
+
+<address> Fujian, Fuzhou 350118 </address>
+<address> wangxd135 at gmail dot com</address>
+</blockquote>
+<br>
+</font></font></font>
+</ul>
+</font></font></font></font>
+</td></tr>
+</tbody>
+</table>
+<br></td></tr>
+</tbody>
+</table>
+</center>
+</td></tr>
+</tbody>
+</table>
+</ul>
+
+</body>
+</html>
